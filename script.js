@@ -5,7 +5,7 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  // Footer year
+  // Year footer
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -29,7 +29,6 @@
     ].filter(Boolean).join("\n");
   }
 
-  // SMS deep link (iOS vs others)
   function smsLink(number, body) {
     const encoded = encodeURIComponent(body || "");
     const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -41,7 +40,7 @@
     return `https://wa.me/${numberWa}?text=${encoded}`;
   }
 
-  // Hydrate all SMS / WA buttons with a clean prefilled message
+  // Hydrate SMS/WA buttons
   function hydrateLinks() {
     $$("[data-sms]").forEach((a) => {
       const src = a.getAttribute("data-sms") || "site";
@@ -57,7 +56,7 @@
   }
   hydrateLinks();
 
-  // Form -> open SMS with the full message
+  // Form -> SMS with full message
   const form = $("#quoteForm");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -101,7 +100,6 @@
     if (e.key === "Escape" && isOpen()) setDrawer(false);
   });
 
-  // Close drawer when clicking a link
   $$("#drawer a").forEach((a) => a.addEventListener("click", () => setDrawer(false)));
 
   // Focus trap
@@ -109,6 +107,7 @@
     if (!isOpen() || e.key !== "Tab") return;
     const focusables = drawer.querySelectorAll("button, a");
     if (!focusables.length) return;
+
     const first = focusables[0];
     const last = focusables[focusables.length - 1];
 
