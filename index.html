@@ -12,15 +12,15 @@
   <meta property="og:title" content="SOS Plombier 66 | Plombier Perpignan 24/7" />
   <meta property="og:description" content="Dépannage plomberie 24h/24 – 7j/7 à Perpignan et dans le 66. Appel, SMS ou WhatsApp." />
   <meta property="og:type" content="website" />
-  <!-- IMPORTANT: met ton vrai domaine ici (og:image doit être ABSOLU) -->
+  <meta property="og:url" content="https://TON-DOMAINE.FR/" />
   <meta property="og:image" content="https://TON-DOMAINE.FR/plombier-perpignan.png" />
 
-  <!-- Icons (logo à la racine) -->
   <link rel="icon" href="./plombier-perpignan.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -29,14 +29,6 @@
 
   <header class="header" id="top">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Aller à l'accueil">
-        <img class="logo" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="48" height="48" />
-        <div class="brandText">
-          <div class="brandName">SOS Plombier 66</div>
-          <div class="brandTag">Perpignan • Dépannage 24h/24 • 7j/7</div>
-        </div>
-      </a>
-
       <nav class="menu" aria-label="Menu principal">
         <a href="#services">Services</a>
         <a href="#zone">Zone</a>
@@ -44,11 +36,18 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="actions">
+      <a class="brand brandCenter" href="#top" aria-label="Aller à l'accueil">
+        <img class="logo logoBig" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="72" height="72" />
+        <div class="brandText brandTextCenter">
+          <div class="brandName">SOS Plombier 66</div>
+          <div class="brandTag">Perpignan • Dépannage 24h/24 • 7j/7</div>
+        </div>
+      </a>
+
+      <div class="actions actionsRight">
         <a class="btn btnPrimary btnSm" href="tel:+33756878703" id="callTop">
           📞 <span class="phoneText">07 56 87 87 03</span>
         </a>
-
         <button class="burger" type="button"
           aria-label="Ouvrir le menu"
           aria-expanded="false"
@@ -71,16 +70,23 @@
           <h1>Plombier à Perpignan <span class="accent">24h/24 – 7j/7</span></h1>
 
           <p class="heroLead">
-            Dépannage plomberie dans le <strong>66</strong> :
-            fuite, débouchage, chauffe-eau, WC, sanitaire.
+            Dépannage plomberie dans le <strong>66</strong> : fuite, débouchage, chauffe-eau, WC, sanitaire.
             <strong>Travail propre</strong>, <strong>prix annoncés</strong>, <strong>intervention garantie</strong>.
           </p>
 
-          <div class="heroCtas">
-            <a class="btn btnPrimary btnLg" href="tel:+33756878703">📞 Appeler maintenant</a>
-            <a class="btn btnGhost btnLg" href="sms:+33756878703" data-sms="hero">📩 SMS direct</a>
-            <a class="btn btnGhost btnLg" href="https://wa.me/33756878703" data-wa="hero">💬 WhatsApp</a>
-            <a class="btn btnGhost btnLg" href="#contact">Devis / infos</a>
+          <!-- CTA PRO (bien séparés, centrés, visibles) -->
+          <div class="ctaPanel" aria-label="Actions rapides">
+            <div class="ctaPanelTitle">Contact immédiat</div>
+
+            <div class="heroCtas ctasCentered">
+              <a class="btn btnPrimary btnXl" href="tel:+33756878703">📞 Appeler maintenant</a>
+              <a class="btn btnGhost btnXl" href="sms:+33756878703" data-sms="hero">📩 SMS direct</a>
+              <a class="btn btnGhost btnXl" href="https://wa.me/33756878703" data-wa="hero">💬 WhatsApp</a>
+            </div>
+
+            <div class="ctaSubline">
+              Devis / infos • Réponse rapide • Perpignan & 66
+            </div>
           </div>
 
           <div class="trust" aria-label="Gages de confiance">
@@ -91,13 +97,15 @@
           </div>
 
           <div class="notice">
-            <strong>Urgence ?</strong> Coupez l’eau si possible, mettez un seau, et appelez : <a class="linkInline" href="tel:+33756878703">07 56 87 87 03</a>.
+            <strong>Urgence ?</strong> Si possible, coupez l’eau. Appelez :
+            <a class="linkInline" href="tel:+33756878703">07 56 87 87 03</a>.
           </div>
         </div>
 
+        <!-- CARD -->
         <aside class="heroCard" aria-label="Carte contact">
           <div class="heroCardTop">
-            <div class="heroCardTitle">Contact rapide</div>
+            <div class="heroCardTitle">SOS Plombier 66</div>
             <div class="heroCardSub">Perpignan & Pyrénées-Orientales (66)</div>
           </div>
 
@@ -110,6 +118,11 @@
               <a class="btn btnPrimary btnLg full" href="tel:+33756878703">📞 Appeler</a>
               <a class="btn btnGhost btnLg full" href="sms:+33756878703" data-sms="card">📩 SMS</a>
               <a class="btn btnGhost btnLg full" href="https://wa.me/33756878703" data-wa="card">💬 WhatsApp</a>
+
+              <a class="btn btnPartner btnLg full"
+                 href="https://www.multitech-depannage.fr"
+                 target="_blank"
+                 rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
             </div>
 
             <div class="badges" aria-label="Prestations">
@@ -137,7 +150,7 @@
         <div class="cards">
           <article class="card">
             <div class="cardTitle">🚰 Recherche & réparation de fuite</div>
-            <p>Détection, réparation, remise en service. Conseils pour éviter les récidives.</p>
+            <p>Détection, réparation, remise en service. Conseils anti-récidive.</p>
           </article>
 
           <article class="card">
@@ -147,7 +160,7 @@
 
           <article class="card">
             <div class="cardTitle">🔥 Chauffe-eau</div>
-            <p>Dépannage, remplacement, entretien. Pièces adaptées et mise en sécurité.</p>
+            <p>Dépannage, remplacement, entretien. Mise en sécurité.</p>
           </article>
 
           <article class="card">
@@ -157,7 +170,7 @@
 
           <article class="card">
             <div class="cardTitle">🛁 Salle de bain</div>
-            <p>Robinetterie, siphon, évacuation, petites réparations et remise en état.</p>
+            <p>Robinetterie, siphon, évacuation, petites réparations.</p>
           </article>
 
           <article class="card urgent">
@@ -195,7 +208,7 @@
       </div>
     </section>
 
-    <!-- ENGAGEMENTS -->
+    <!-- ENGAGEMENTS (pas d'avis clients) -->
     <section class="section" id="engagements">
       <div class="container">
         <div class="sectionHead">
@@ -208,17 +221,14 @@
             <div class="cardTitle">✅ Prix annoncés</div>
             <p>On explique la solution et le tarif avant d’intervenir (selon la situation).</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🧼 Travail propre</div>
             <p>Protection de la zone, nettoyage après passage, remise en service.</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🧾 Facture</div>
             <p>Facture fournie (utile pour assurance / gestion locative).</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">⚡ Réactivité</div>
             <p>Urgence 24/7 • Appel, SMS ou WhatsApp — réponse rapide.</p>
@@ -228,7 +238,7 @@
         <div class="faq">
           <details>
             <summary>Quel est le délai d’intervention ?</summary>
-            <p>Selon la zone et l’urgence, on intervient au plus vite sur Perpignan et le 66. Appelez pour une estimation immédiate.</p>
+            <p>Selon la zone et l’urgence, intervention au plus vite sur Perpignan et le 66. Appelez pour une estimation immédiate.</p>
           </details>
           <details>
             <summary>Donnez-vous un devis avant intervention ?</summary>
@@ -273,6 +283,11 @@
             <a class="btn btnPrimary btnLg full" href="tel:+33756878703">📞 Appeler maintenant</a>
             <a class="btn btnGhost btnLg full" href="sms:+33756878703" data-sms="contact">📩 SMS direct</a>
             <a class="btn btnGhost btnLg full" href="https://wa.me/33756878703" data-wa="contact">💬 WhatsApp</a>
+
+            <a class="btn btnPartner btnLg full"
+               href="https://www.multitech-depannage.fr"
+               target="_blank"
+               rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
           </div>
 
           <small class="muted">
@@ -324,7 +339,7 @@
     </div>
   </footer>
 
-  <!-- Barre d’appel sticky (mobile) -->
+  <!-- Barre d’appel sticky -->
   <div class="callBar" role="region" aria-label="Contact rapide">
     <a class="callBarBtn" href="tel:+33756878703">
       <span class="callIcon">📞</span>
@@ -343,9 +358,15 @@
       <a href="#zone">Zone</a>
       <a href="#engagements">Engagements</a>
       <a href="#contact">Contact</a>
+
       <a class="btn btnPrimary" href="tel:+33756878703">📞 Appeler</a>
       <a class="btn btnGhost" href="sms:+33756878703" data-sms="drawer">📩 SMS</a>
       <a class="btn btnGhost" href="https://wa.me/33756878703" data-wa="drawer">💬 WhatsApp</a>
+
+      <a class="btn btnPartner"
+         href="https://www.multitech-depannage.fr"
+         target="_blank"
+         rel="noopener">ℹ️ Partenaire – plus d’infos</a>
     </div>
     <div class="drawerBackdrop" tabindex="-1" aria-hidden="true"></div>
   </div>
