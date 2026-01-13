@@ -29,6 +29,16 @@
 
   <header class="header" id="top">
     <div class="container nav">
+      <div class="navLeft">
+        <a class="brand" href="#top" aria-label="Accueil">
+          <img class="logo logoHeader" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="96" height="96" />
+          <div class="brandText">
+            <div class="brandName">SOS Plombier 66</div>
+            <div class="brandTag">Perpignan • Dépannage 24h/24 • 7j/7</div>
+          </div>
+        </a>
+      </div>
+
       <nav class="menu" aria-label="Menu principal">
         <a href="#services">Services</a>
         <a href="#zone">Zone</a>
@@ -36,19 +46,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <!-- LOGO CENTRÉ + GROS -->
-      <a class="brand brandCenter" href="#top" aria-label="Aller à l'accueil">
-        <img class="logo logoBig" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="120" height="120" />
-        <div class="brandText brandTextCenter">
-          <div class="brandName">SOS Plombier 66</div>
-          <div class="brandTag">Perpignan • Dépannage 24h/24 • 7j/7</div>
-        </div>
-      </a>
-
-      <div class="actions actionsRight">
-        <a class="btn btnPrimary btnSm" href="tel:+33756878703">
-          📞 <span class="phoneText">07 56 87 87 03</span>
-        </a>
+      <div class="navRight">
         <button class="burger" type="button"
           aria-label="Ouvrir le menu"
           aria-expanded="false"
@@ -65,8 +63,13 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container heroGrid">
+        <!-- Left -->
         <div class="heroText">
-          <p class="kicker">🔴🟡 Service local • Intervention rapide</p>
+          <div class="pill">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span>Service local • Intervention rapide</span>
+          </div>
 
           <h1>Plombier à Perpignan <span class="accent">24h/24 – 7j/7</span></h1>
 
@@ -75,9 +78,12 @@
             <strong>Travail propre</strong>, <strong>prix annoncés</strong>, <strong>intervention garantie</strong>.
           </p>
 
-          <!-- CTA BLOQUÉ PRO : bien séparé + centré -->
+          <!-- CTA Premium (séparés des infos) -->
           <div class="ctaPanel" aria-label="Actions rapides">
-            <div class="ctaPanelTitle">Contact immédiat</div>
+            <div class="ctaHead">
+              <div class="ctaTitle">Contact immédiat</div>
+              <div class="ctaHint">Réponse rapide • Perpignan & 66</div>
+            </div>
 
             <div class="ctaButtons">
               <a class="btn btnPrimary btnXl" href="tel:+33756878703">📞 Appeler maintenant</a>
@@ -85,14 +91,9 @@
               <a class="btn btnGhost btnXl" href="https://wa.me/33756878703" data-wa="hero">💬 WhatsApp</a>
             </div>
 
-            <div class="ctaSubline">
-              Devis / infos • Réponse rapide • Perpignan & 66
-            </div>
-
             <a class="btn btnPartner btnLg partnerWide"
                href="https://www.multitech-depannage.fr"
-               target="_blank"
-               rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
+               target="_blank" rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
           </div>
 
           <div class="trust" aria-label="Gages de confiance">
@@ -108,18 +109,42 @@
           </div>
         </div>
 
-        <!-- CARD -->
-        <aside class="heroCard" aria-label="Carte contact">
+        <!-- Right (FORM EN HAUT) -->
+        <aside class="heroCard" aria-label="Demande rapide">
           <div class="heroCardTop">
-            <div class="heroCardTitle">SOS Plombier 66</div>
-            <div class="heroCardSub">Perpignan & Pyrénées-Orientales (66)</div>
+            <div>
+              <div class="heroCardTitle">Demande rapide</div>
+              <div class="heroCardSub">Devis / intervention • Réponse rapide</div>
+            </div>
           </div>
 
           <div class="heroCardBody">
-            <!-- LOGO CARD PLUS GROS + CENTRÉ -->
+            <!-- Logo centré + très gros -->
             <div class="cardLogo">
-              <img src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" loading="lazy" decoding="async" width="150" height="150" />
+              <img src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="170" height="170" loading="lazy" decoding="async" />
             </div>
+
+            <form class="form formHero" id="quoteForm">
+              <div class="field">
+                <label for="name">Nom</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Votre nom" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Téléphone</label>
+                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="Votre numéro" required />
+              </div>
+
+              <div class="field">
+                <label for="msg">Votre demande</label>
+                <textarea id="msg" name="msg" rows="3" placeholder="Ex : fuite, WC bouché, chauffe-eau…" required></textarea>
+              </div>
+
+              <button class="btn btnPrimary btnLg full" type="submit">📩 Envoyer la demande</button>
+              <p class="muted tiny center">Le message s’ouvre dans votre application SMS.</p>
+            </form>
+
+            <div class="divider"></div>
 
             <div class="quickActions">
               <a class="btn btnPrimary btnLg full" href="tel:+33756878703">📞 Appeler</a>
@@ -128,8 +153,7 @@
 
               <a class="btn btnPartner btnLg full"
                  href="https://www.multitech-depannage.fr"
-                 target="_blank"
-                 rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
+                 target="_blank" rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
             </div>
 
             <div class="badges" aria-label="Prestations">
@@ -139,8 +163,6 @@
               <span class="badge">WC</span>
               <span class="badge">Sanitaire</span>
             </div>
-
-            <p class="muted small">Réponse rapide • Devis clair selon la situation</p>
           </div>
         </aside>
       </div>
@@ -159,27 +181,22 @@
             <div class="cardTitle">🚰 Recherche & réparation de fuite</div>
             <p>Détection, réparation, remise en service. Conseils anti-récidive.</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🧼 Débouchage canalisations</div>
             <p>Évier, douche, WC, colonnes. Intervention propre et efficace.</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🔥 Chauffe-eau</div>
             <p>Dépannage, remplacement, entretien. Mise en sécurité.</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🚽 WC / chasse d’eau</div>
             <p>Mécanisme, flotteur, fuite, remplacement. Solutions durables.</p>
           </article>
-
           <article class="card">
             <div class="cardTitle">🛁 Salle de bain</div>
             <p>Robinetterie, siphon, évacuation, petites réparations.</p>
           </article>
-
           <article class="card urgent">
             <div class="cardTitle">🚨 Urgence</div>
             <p>Fuite importante, dégât des eaux, coupure — intervention rapide.</p>
@@ -201,12 +218,10 @@
             <div class="zoneTitle">📍 Perpignan</div>
             <p>Centre-ville, quartiers, périphérie.</p>
           </div>
-
           <div class="zoneBox">
             <div class="zoneTitle">🚗 Autour</div>
-            <p>Canet-en-Roussillon, Saint-Estève, Cabestany, Rivesaltes, Toulouges, Bompas…</p>
+            <p>Canet, Saint-Estève, Cabestany, Rivesaltes, Toulouges, Bompas…</p>
           </div>
-
           <div class="zoneBox">
             <div class="zoneTitle">🧾 Transparence</div>
             <p>Explication + devis clair selon les cas, avant intervention.</p>
@@ -215,41 +230,41 @@
       </div>
     </section>
 
-    <!-- ENGAGEMENTS (pas d'avis) -->
+    <!-- ENGAGEMENTS -->
     <section class="section" id="engagements">
       <div class="container">
         <div class="sectionHead">
           <h2>Nos engagements</h2>
-          <p class="lead">Du sérieux, du propre, et une communication claire.</p>
+          <p class="lead">Qualité, propreté, clarté — comme une grande marque.</p>
         </div>
 
         <div class="cards">
           <article class="card">
             <div class="cardTitle">✅ Prix annoncés</div>
-            <p>On explique la solution et le tarif avant d’intervenir (selon la situation).</p>
+            <p>Tarif annoncé avant intervention quand c’est possible.</p>
           </article>
           <article class="card">
             <div class="cardTitle">🧼 Travail propre</div>
-            <p>Protection de la zone, nettoyage après passage, remise en service.</p>
+            <p>Protection, nettoyage, remise en service.</p>
           </article>
           <article class="card">
             <div class="cardTitle">🧾 Facture</div>
-            <p>Facture fournie (utile pour assurance / gestion locative).</p>
+            <p>Facture fournie (assurance / location / syndic).</p>
           </article>
           <article class="card">
             <div class="cardTitle">⚡ Réactivité</div>
-            <p>Urgence 24/7 • Appel, SMS ou WhatsApp — réponse rapide.</p>
+            <p>Urgence 24/7 • Appel, SMS ou WhatsApp.</p>
           </article>
         </div>
 
         <div class="faq">
           <details>
             <summary>Quel est le délai d’intervention ?</summary>
-            <p>Selon la zone et l’urgence, intervention au plus vite sur Perpignan et le 66. Appelez pour une estimation immédiate.</p>
+            <p>Selon la zone et l’urgence, intervention au plus vite sur Perpignan et le 66.</p>
           </details>
           <details>
             <summary>Donnez-vous un devis avant intervention ?</summary>
-            <p>Oui, on annonce le tarif avant d’intervenir quand c’est possible (selon le diagnostic sur place).</p>
+            <p>Oui, devis/annonce tarifaire quand c’est possible après diagnostic.</p>
           </details>
           <details>
             <summary>Intervenez-vous la nuit et le week-end ?</summary>
@@ -259,7 +274,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (sans formulaire ici, car en haut) -->
     <section class="section alt" id="contact">
       <div class="container contactGrid">
         <div class="contactLeft">
@@ -271,17 +286,14 @@
               <span>📞 Téléphone</span>
               <a class="link" href="tel:+33756878703"><span class="phoneText">07 56 87 87 03</span></a>
             </div>
-
             <div class="contactRow">
               <span>📩 SMS</span>
               <a class="link" href="sms:+33756878703" data-sms="contact">Envoyer un SMS</a>
             </div>
-
             <div class="contactRow">
               <span>💬 WhatsApp</span>
               <a class="link" href="https://wa.me/33756878703" data-wa="contact">Ouvrir WhatsApp</a>
             </div>
-
             <div class="contactRow"><span>🕒 Horaires</span> <span>24h/24 • 7j/7</span></div>
             <div class="contactRow"><span>📍 Zone</span> <span>Pyrénées-Orientales (66)</span></div>
           </div>
@@ -293,42 +305,17 @@
 
             <a class="btn btnPartner btnLg full"
                href="https://www.multitech-depannage.fr"
-               target="_blank"
-               rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
+               target="_blank" rel="noopener">ℹ️ Plus d’infos – notre partenaire</a>
           </div>
-
-          <small class="muted">
-            Le formulaire ci-contre ouvre votre application SMS avec un message prêt à envoyer.
-          </small>
         </div>
 
-        <form class="form" id="quoteForm">
-          <div class="formHead">
-            <div class="formTitle">Demande rapide</div>
-            <div class="formSub">Remplissez → un SMS prêt à envoyer s’ouvre automatiquement.</div>
+        <div class="contactRight">
+          <div class="contactCard">
+            <div class="contactCardTitle">Besoin d’une intervention ?</div>
+            <p class="muted">Utilisez le formulaire en haut de page ou appelez directement.</p>
+            <a class="btn btnPrimary btnLg full" href="#top">⬆️ Remonter au formulaire</a>
           </div>
-
-          <div class="field">
-            <label for="name">Nom</label>
-            <input id="name" name="name" autocomplete="name" placeholder="Votre nom" required />
-          </div>
-
-          <div class="field">
-            <label for="phone">Téléphone</label>
-            <input id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="Votre numéro" required />
-          </div>
-
-          <div class="field">
-            <label for="msg">Votre demande</label>
-            <textarea id="msg" name="msg" rows="4" placeholder="Ex : fuite sous évier, débouchage WC, chauffe-eau…" required></textarea>
-          </div>
-
-          <button class="btn btnPrimary btnLg full" type="submit">Envoyer par SMS</button>
-
-          <p class="muted tiny">
-            Sur ordinateur, l’envoi SMS dépend du système. Sur mobile, c’est immédiat.
-          </p>
-        </form>
+        </div>
       </div>
     </section>
   </main>
@@ -336,8 +323,7 @@
   <footer class="footer">
     <div class="container footerGrid">
       <div class="footBrand">
-        <!-- LOGO FOOTER PLUS GROS -->
-        <img class="logoSm" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="54" height="54" loading="lazy" decoding="async" />
+        <img class="logoSm" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="64" height="64" loading="lazy" decoding="async" />
         <div>
           <div class="brandName">SOS Plombier 66</div>
           <div class="muted">Plombier à Perpignan • Dépannage 24/7</div>
@@ -362,6 +348,7 @@
   <div class="drawer" id="drawer" aria-hidden="true">
     <div class="drawerPanel" role="dialog" aria-modal="true" aria-label="Menu">
       <button class="drawerClose" type="button" aria-label="Fermer le menu">✕</button>
+
       <a href="#services">Services</a>
       <a href="#zone">Zone</a>
       <a href="#engagements">Engagements</a>
@@ -373,8 +360,7 @@
 
       <a class="btn btnPartner"
          href="https://www.multitech-depannage.fr"
-         target="_blank"
-         rel="noopener">ℹ️ Partenaire – plus d’infos</a>
+         target="_blank" rel="noopener">ℹ️ Partenaire – plus d’infos</a>
     </div>
     <div class="drawerBackdrop" tabindex="-1" aria-hidden="true"></div>
   </div>
