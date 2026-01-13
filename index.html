@@ -6,14 +6,18 @@
   <meta name="theme-color" content="#c61818" />
 
   <title>SOS Plombier 66 | Plombier à Perpignan 24h/24 – 7j/7</title>
-  <meta name="description" content="SOS Plombier 66 — Plombier à Perpignan (66). Dépannage 24h/24 – 7j/7 : fuite, débouchage, chauffe-eau, sanitaire. Appel, SMS ou WhatsApp." />
+  <meta name="description" content="SOS Plombier 66 — Plombier à Perpignan (66). Dépannage 24h/24 – 7j/7 : fuite, débouchage, chauffe-eau, WC, sanitaire. Appel, SMS ou WhatsApp." />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="SOS Plombier 66 | Plombier Perpignan 24/7" />
   <meta property="og:description" content="Dépannage plomberie 24h/24 – 7j/7 à Perpignan et dans le 66. Appel, SMS ou WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/plombier-perpignan.png" />
+  <!-- IMPORTANT: met ton vrai domaine ici (og:image doit être ABSOLU) -->
+  <meta property="og:image" content="https://TON-DOMAINE.FR/plombier-perpignan.png" />
 
-  <link rel="icon" href="assets/plombier-perpignan.png" />
+  <!-- Icons (logo à la racine) -->
+  <link rel="icon" href="./plombier-perpignan.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
@@ -23,10 +27,10 @@
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
 
-  <header class="header">
+  <header class="header" id="top">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Aller à l'accueil">
-        <img class="logo" src="assets/plombier-perpignan.png" alt="Logo SOS Plombier 66" />
+        <img class="logo" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="48" height="48" />
         <div class="brandText">
           <div class="brandName">SOS Plombier 66</div>
           <div class="brandTag">Perpignan • Dépannage 24h/24 • 7j/7</div>
@@ -59,7 +63,7 @@
 
   <main id="contenu">
     <!-- HERO -->
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="container heroGrid">
         <div class="heroText">
           <p class="kicker">🔴🟡 Service local • Intervention rapide</p>
@@ -67,74 +71,57 @@
           <h1>Plombier à Perpignan <span class="accent">24h/24 – 7j/7</span></h1>
 
           <p class="heroLead">
-            Dépannage dans le <strong>66</strong> : fuite, débouchage, chauffe-eau, sanitaire.
-            Travail propre, prix annoncés, intervention garantie.
+            Dépannage plomberie dans le <strong>66</strong> :
+            fuite, débouchage, chauffe-eau, WC, sanitaire.
+            <strong>Travail propre</strong>, <strong>prix annoncés</strong>, <strong>intervention garantie</strong>.
           </p>
 
           <div class="heroCtas">
-            <a class="btn btnPrimary btnLg" href="tel:+33756878703" id="callHero">📞 Appeler maintenant</a>
-
-            <!-- SMS/WhatsApp : vrais boutons (pas de #) -->
-            <a class="btn btnGhost btnLg"
-               href="sms:+33756878703"
-               data-sms="hero"
-               id="smsHeroBtn">📩 SMS direct</a>
-
-            <a class="btn btnGhost btnLg"
-               href="https://wa.me/33756878703"
-               data-wa="hero"
-               id="waHeroBtn">💬 WhatsApp</a>
-
+            <a class="btn btnPrimary btnLg" href="tel:+33756878703">📞 Appeler maintenant</a>
+            <a class="btn btnGhost btnLg" href="sms:+33756878703" data-sms="hero">📩 SMS direct</a>
+            <a class="btn btnGhost btnLg" href="https://wa.me/33756878703" data-wa="hero">💬 WhatsApp</a>
             <a class="btn btnGhost btnLg" href="#contact">Devis / infos</a>
           </div>
-
-          <ul class="bullets" aria-label="Avantages">
-            <li>✅ Intervention rapide</li>
-            <li>✅ Devis clair</li>
-            <li>✅ Perpignan & 66</li>
-          </ul>
 
           <div class="trust" aria-label="Gages de confiance">
             <div class="trustItem">🕒 <strong>24/7</strong> urgence</div>
             <div class="trustItem">🧰 <strong>Pro</strong> outillé</div>
             <div class="trustItem">🧾 <strong>Facture</strong> / assurance</div>
+            <div class="trustItem">🧼 <strong>Propre</strong> & soigné</div>
+          </div>
+
+          <div class="notice">
+            <strong>Urgence ?</strong> Coupez l’eau si possible, mettez un seau, et appelez : <a class="linkInline" href="tel:+33756878703">07 56 87 87 03</a>.
           </div>
         </div>
 
-        <aside class="heroCard" aria-label="Carte de contact rapide">
-          <div class="heroCardTitle">SOS Plombier 66</div>
-          <p class="heroCardText">Urgence / dépannage à Perpignan et dans tout le 66.</p>
-
-          <div class="miniStripes" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span>
+        <aside class="heroCard" aria-label="Carte contact">
+          <div class="heroCardTop">
+            <div class="heroCardTitle">Contact rapide</div>
+            <div class="heroCardSub">Perpignan & Pyrénées-Orientales (66)</div>
           </div>
 
-          <div class="logoCard">
-            <img src="assets/plombier-perpignan.png" alt="Logo SOS Plombier 66" loading="lazy" decoding="async" />
+          <div class="heroCardBody">
+            <div class="cardLogo">
+              <img src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" loading="lazy" decoding="async" width="84" height="84" />
+            </div>
+
+            <div class="quickActions">
+              <a class="btn btnPrimary btnLg full" href="tel:+33756878703">📞 Appeler</a>
+              <a class="btn btnGhost btnLg full" href="sms:+33756878703" data-sms="card">📩 SMS</a>
+              <a class="btn btnGhost btnLg full" href="https://wa.me/33756878703" data-wa="card">💬 WhatsApp</a>
+            </div>
+
+            <div class="badges" aria-label="Prestations">
+              <span class="badge">Fuite</span>
+              <span class="badge">Débouchage</span>
+              <span class="badge">Chauffe-eau</span>
+              <span class="badge">WC</span>
+              <span class="badge">Sanitaire</span>
+            </div>
+
+            <p class="muted small">Réponse rapide • Devis clair selon la situation</p>
           </div>
-
-          <div class="quick">
-            <a class="btn btnPrimary btnLg full" href="tel:+33756878703" id="callCard">📞 Appeler</a>
-
-            <a class="btn btnGhost btnLg full"
-               href="sms:+33756878703"
-               data-sms="card"
-               id="smsCardBtn">📩 SMS direct</a>
-
-            <a class="btn btnGhost btnLg full"
-               href="https://wa.me/33756878703"
-               data-wa="card"
-               id="waCardBtn">💬 WhatsApp</a>
-          </div>
-
-          <div class="heroBadges" aria-label="Prestations">
-            <span class="badge">Fuite</span>
-            <span class="badge">Débouchage</span>
-            <span class="badge">Chauffe-eau</span>
-            <span class="badge">Sanitaire</span>
-          </div>
-
-          <small class="muted">Réponse rapide • Devis clair selon le cas</small>
         </aside>
       </div>
     </section>
@@ -144,33 +131,33 @@
       <div class="container">
         <div class="sectionHead">
           <h2>Services</h2>
-          <p class="lead">Les interventions les plus demandées à Perpignan et dans le 66.</p>
+          <p class="lead">Interventions courantes à Perpignan et dans le 66.</p>
         </div>
 
         <div class="cards">
           <article class="card">
-            <div class="cardTitle">🚰 Recherche de fuite</div>
+            <div class="cardTitle">🚰 Recherche & réparation de fuite</div>
             <p>Détection, réparation, remise en service. Conseils pour éviter les récidives.</p>
           </article>
 
           <article class="card">
-            <div class="cardTitle">🧼 Débouchage</div>
-            <p>Évier, douche, WC, canalisations. Intervention propre et efficace.</p>
+            <div class="cardTitle">🧼 Débouchage canalisations</div>
+            <p>Évier, douche, WC, colonnes. Intervention propre et efficace.</p>
           </article>
 
           <article class="card">
             <div class="cardTitle">🔥 Chauffe-eau</div>
-            <p>Dépannage, remplacement, entretien. Marques courantes et pièces adaptées.</p>
+            <p>Dépannage, remplacement, entretien. Pièces adaptées et mise en sécurité.</p>
           </article>
 
           <article class="card">
             <div class="cardTitle">🚽 WC / chasse d’eau</div>
-            <p>Mécanisme, flotteur, fuite, remplacement. Solutions rapides et durables.</p>
+            <p>Mécanisme, flotteur, fuite, remplacement. Solutions durables.</p>
           </article>
 
           <article class="card">
             <div class="cardTitle">🛁 Salle de bain</div>
-            <p>Siphon, robinetterie, évacuation, petits travaux et remise en état.</p>
+            <p>Robinetterie, siphon, évacuation, petites réparations et remise en état.</p>
           </article>
 
           <article class="card urgent">
@@ -186,7 +173,7 @@
       <div class="container">
         <div class="sectionHead">
           <h2>Zone d’intervention</h2>
-          <p class="lead">Perpignan et alentours — tout le département <strong>66</strong>.</p>
+          <p class="lead">Perpignan et alentours — département <strong>66</strong>.</p>
         </div>
 
         <div class="zoneGrid">
@@ -196,19 +183,19 @@
           </div>
 
           <div class="zoneBox">
-            <div class="zoneTitle">🚗 Autour de Perpignan</div>
+            <div class="zoneTitle">🚗 Autour</div>
             <p>Canet-en-Roussillon, Saint-Estève, Cabestany, Rivesaltes, Toulouges, Bompas…</p>
           </div>
 
           <div class="zoneBox">
             <div class="zoneTitle">🧾 Transparence</div>
-            <p>Devis clair avant intervention (selon les cas) + conseils d’entretien.</p>
+            <p>Explication + devis clair selon les cas, avant intervention.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ENGAGEMENTS (remplace les faux avis) -->
+    <!-- ENGAGEMENTS -->
     <section class="section" id="engagements">
       <div class="container">
         <div class="sectionHead">
@@ -219,12 +206,12 @@
         <div class="cards">
           <article class="card">
             <div class="cardTitle">✅ Prix annoncés</div>
-            <p>On explique la solution et le tarif avant d’intervenir, selon la situation.</p>
+            <p>On explique la solution et le tarif avant d’intervenir (selon la situation).</p>
           </article>
 
           <article class="card">
             <div class="cardTitle">🧼 Travail propre</div>
-            <p>Protection de la zone, nettoyage après passage, et remise en service.</p>
+            <p>Protection de la zone, nettoyage après passage, remise en service.</p>
           </article>
 
           <article class="card">
@@ -234,8 +221,23 @@
 
           <article class="card">
             <div class="cardTitle">⚡ Réactivité</div>
-            <p>Urgence 24/7 à Perpignan et dans le 66. Contact téléphone, SMS ou WhatsApp.</p>
+            <p>Urgence 24/7 • Appel, SMS ou WhatsApp — réponse rapide.</p>
           </article>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Quel est le délai d’intervention ?</summary>
+            <p>Selon la zone et l’urgence, on intervient au plus vite sur Perpignan et le 66. Appelez pour une estimation immédiate.</p>
+          </details>
+          <details>
+            <summary>Donnez-vous un devis avant intervention ?</summary>
+            <p>Oui, on annonce le tarif avant d’intervenir quand c’est possible (selon le diagnostic sur place).</p>
+          </details>
+          <details>
+            <summary>Intervenez-vous la nuit et le week-end ?</summary>
+            <p>Oui, service d’urgence 24h/24 – 7j/7.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -250,17 +252,17 @@
           <div class="contactBox">
             <div class="contactRow">
               <span>📞 Téléphone</span>
-              <a class="link" href="tel:+33756878703" id="callBottom"><span class="phoneText">07 56 87 87 03</span></a>
+              <a class="link" href="tel:+33756878703"><span class="phoneText">07 56 87 87 03</span></a>
             </div>
 
             <div class="contactRow">
               <span>📩 SMS</span>
-              <a class="link" href="sms:+33756878703" data-sms="contact" id="smsDirectBtn">Envoyer un SMS</a>
+              <a class="link" href="sms:+33756878703" data-sms="contact">Envoyer un SMS</a>
             </div>
 
             <div class="contactRow">
               <span>💬 WhatsApp</span>
-              <a class="link" href="https://wa.me/33756878703" data-wa="contact" id="whatsappDirectBtn">Ouvrir WhatsApp</a>
+              <a class="link" href="https://wa.me/33756878703" data-wa="contact">Ouvrir WhatsApp</a>
             </div>
 
             <div class="contactRow"><span>🕒 Horaires</span> <span>24h/24 • 7j/7</span></div>
@@ -268,15 +270,13 @@
           </div>
 
           <div class="contactCtas">
-            <a class="btn btnPrimary btnLg full" href="tel:+33756878703" id="callContact">📞 Appeler maintenant</a>
-
-            <a class="btn btnGhost btnLg full" href="sms:+33756878703" data-sms="contact" id="smsContactBtn">📩 SMS direct</a>
-
-            <a class="btn btnGhost btnLg full" href="https://wa.me/33756878703" data-wa="contact" id="whatsappBtn">💬 WhatsApp</a>
+            <a class="btn btnPrimary btnLg full" href="tel:+33756878703">📞 Appeler maintenant</a>
+            <a class="btn btnGhost btnLg full" href="sms:+33756878703" data-sms="contact">📩 SMS direct</a>
+            <a class="btn btnGhost btnLg full" href="https://wa.me/33756878703" data-wa="contact">💬 WhatsApp</a>
           </div>
 
           <small class="muted">
-            En remplissant le formulaire, un message s’ouvrira automatiquement dans votre application SMS.
+            Le formulaire ci-contre ouvre votre application SMS avec un message prêt à envoyer.
           </small>
         </div>
 
@@ -314,7 +314,7 @@
   <footer class="footer">
     <div class="container footerGrid">
       <div class="footBrand">
-        <img class="logoSm" src="assets/plombier-perpignan.png" alt="Logo SOS Plombier 66" loading="lazy" decoding="async" />
+        <img class="logoSm" src="./plombier-perpignan.png" alt="Logo SOS Plombier 66" width="32" height="32" loading="lazy" decoding="async" />
         <div>
           <div class="brandName">SOS Plombier 66</div>
           <div class="muted">Plombier à Perpignan • Dépannage 24/7</div>
@@ -326,7 +326,7 @@
 
   <!-- Barre d’appel sticky (mobile) -->
   <div class="callBar" role="region" aria-label="Contact rapide">
-    <a class="callBarBtn" href="tel:+33756878703" id="callSticky">
+    <a class="callBarBtn" href="tel:+33756878703">
       <span class="callIcon">📞</span>
       <span>
         <strong>Urgence plombier 7j/7</strong><br />
@@ -344,18 +344,19 @@
       <a href="#engagements">Engagements</a>
       <a href="#contact">Contact</a>
       <a class="btn btnPrimary" href="tel:+33756878703">📞 Appeler</a>
-      <a class="btn btnGhost" href="sms:+33756878703" data-sms="drawer" id="smsDrawerBtn">📩 SMS direct</a>
-      <a class="btn btnGhost" href="https://wa.me/33756878703" data-wa="drawer" id="waDrawerBtn">💬 WhatsApp</a>
+      <a class="btn btnGhost" href="sms:+33756878703" data-sms="drawer">📩 SMS</a>
+      <a class="btn btnGhost" href="https://wa.me/33756878703" data-wa="drawer">💬 WhatsApp</a>
     </div>
     <div class="drawerBackdrop" tabindex="-1" aria-hidden="true"></div>
   </div>
 
-  <!-- JSON-LD LocalBusiness -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Plumber",
     "name": "SOS Plombier 66",
+    "telephone": "+33756878703",
     "areaServed": "Pyrénées-Orientales (66)",
     "address": {
       "@type": "PostalAddress",
@@ -363,7 +364,6 @@
       "addressRegion": "Occitanie",
       "addressCountry": "FR"
     },
-    "telephone": "+33756878703",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
