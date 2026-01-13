@@ -1,104 +1,135 @@
-// script.js
-// ✅ SOS Plombier 66 — configuration
-const PHONE_DISPLAY = "07 56 87 87 03";
-const PHONE_TEL = "+33756878703";     // format international
-const WHATSAPP_NUMBER = "33756878703"; // sans +
-const SMS_NUMBER = "33756878703";      // sans +
+(() => {
+  const PHONE_INTL = "+33756878703";
+  const PHONE_WA = "33756878703";
 
-// Message par défaut (boutons SMS)
-const SMS_DEFAULT_MESSAGE =
-`Bonjour,
-J’ai besoin d’un plombier à Perpignan (66).
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-Merci de me rappeler.
-`;
+  // Year footer
+  const yearEl = $("#year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ----- Utils
-function setPhoneEverywhere() {
-  // liens d'appel
-  ["callTop","callHero","callCard","callBottom","callContact","callSticky"].forEach((id)=>{
-    const el = document.getElementById(id);
-    if (el) el.href = `tel:${PHONE_TEL}`;
-  });
+  // Build a clean default message
+  function buildDefaultMessage(source = "site") {
+    return `Bonjour, je vous contacte depuis le site (source: ${source}). J’ai besoin d’un plombier à Perpignan / 66. Pouvez-vous me rappeler ?`;
+  }
 
-  // texte visible
-  document.querySelectorAll(".phoneText").forEach((n)=> n.textContent = PHONE_DISPLAY);
-}
+  function buildFormMessage() {
+    const name = ($("#name")?.value || "").trim();
+    const phone = ($("#phone")?.value || "").trim();
+    const msg = ($("#msg")?.value || "").trim();
 
-function setupWhatsapp() {
-  const wa = document.getElementById("whatsappBtn");
-  if (!wa) return;
+    return [
+      "Bonjour,",
+      "Demande de dépannage plomberie :",
+      name ? `Nom : ${name}` : null,
+      phone ? `Téléphone : ${phone}` : null,
+      msg ? `Demande : ${msg}` : null,
+      "",
+      "Merci."
+    ].filter(Boolean).join("\n");
+  }
 
-  wa.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour, j’ai besoin d’un plombier à Perpignan (66).")}`;
-  wa.target = "_blank";
-  wa.rel = "noopener";
-}
+  // SMS deep link (iOS vs others)
+  function smsLink(number, body) {
+    const encoded = encodeURIComponent(body || "");
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    // iOS uses &body=, many others accept ?body=
+    return isIOS
+      ? `sms:${number}&body=${encoded}`
+      : `sms:${number}?body=${encoded}`;
+  }
 
-function makeSmsLink(message) {
-  // iOS / Android : ouvre l’app SMS
-  return `sms:${SMS_NUMBER}?&body=${encodeURIComponent(message)}`;
-}
+  function waLink(numberWa, body) {
+    const encoded = encodeURIComponent(body || "");
+    return `https://wa.me/${numberWa}?text=${encoded}`;
+  }
 
-function setupSmsButtons() {
-  // SMS direct (boutons)
-  const ids = ["smsHeroBtn","smsCardBtn","smsContactBtn","smsDrawerBtn","smsDirectBtn"];
-  ids.forEach((id)=>{
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.setAttribute("href", makeSmsLink(SMS_DEFAULT_MESSAGE));
-  });
-}
+  // Apply SMS/WA links to all buttons with data-sms / data-wa
+  function hydrateQuickLinks() {
+    $$("[data-sms]").forEach((a) => {
+      const source = a.getAttribute("data-sms") || "site";
+      a.setAttribute("href", smsLink(PHONE_INTL, buildDefaultMessage(source)));
+    });
 
-function setupDrawer() {
-  const burger = document.querySelector(".burger");
-  const drawer = document.getElementById("drawer");
-  const closeBtn = document.querySelector(".drawerClose");
-  const backdrop = document.querySelector(".drawerBackdrop");
+    $$("[data-wa]").forEach((a) => {
+      const source = a.getAttribute("data-wa") || "site";
+      a.setAttribute("href", waLink(PHONE_WA, buildDefaultMessage(source)));
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+  }
+  hydrateQuickLinks();
 
-  const open = () => {
-    drawer.classList.add("isOpen");
-    drawer.setAttribute("aria-hidden", "false");
-    burger.setAttribute("aria-expanded", "true");
-  };
-  const close = () => {
-    drawer.classList.remove("isOpen");
-    drawer.setAttribute("aria-hidden", "true");
-    burger.setAttribute("aria-expanded", "false");
-  };
+  // Form submit => open SMS with full message
+  const form = $("#quoteForm");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const message = buildFormMessage();
+      window.location.href = smsLink(PHONE_INTL, message);
+    });
+  }
 
-  burger?.addEventListener("click", open);
-  closeBtn?.addEventListener("click", close);
-  backdrop?.addEventListener("click", close);
-  drawer?.querySelectorAll("a[href^='#']").forEach((a) => a.addEventListener("click", close));
+  // Mobile drawer
+  const drawer = $("#drawer");
+  const burger = $(".burger");
+  const closeBtn = $(".drawerClose");
+  const backdrop = $(".drawerBackdrop");
 
-  // ESC pour fermer
+  let lastFocused = null;
+
+  function setDrawer(open) {
+    if (!drawer || !burger) return;
+
+    drawer.setAttribute("aria-hidden", open ? "false" : "true");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+
+    if (open) {
+      lastFocused = document.activeElement;
+      const firstFocusable = drawer.querySelector("button, a, input, textarea, [tabindex]:not([tabindex='-1'])");
+      firstFocusable?.focus();
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+    }
+  }
+
+  function isOpen() {
+    return drawer?.getAttribute("aria-hidden") === "false";
+  }
+
+  burger?.addEventListener("click", () => setDrawer(!isOpen()));
+  closeBtn?.addEventListener("click", () => setDrawer(false));
+  backdrop?.addEventListener("click", () => setDrawer(false));
+
+  // Close on ESC
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && drawer.classList.contains("isOpen")) close();
+    if (e.key === "Escape" && isOpen()) setDrawer(false);
   });
-}
 
-// ✅ Formulaire → ouvre un SMS pré-rempli (pas d’email)
-window.handleQuote = function (ev) {
-  ev.preventDefault();
-  const fd = new FormData(ev.target);
+  // Close drawer when clicking a menu link
+  $$("#drawer a").forEach((a) => {
+    a.addEventListener("click", () => setDrawer(false));
+  });
 
-  const message =
-`Demande SOS Plombier 66
-Nom : ${fd.get("name")}
-Téléphone : ${fd.get("phone")}
+  // Basic focus trap
+  document.addEventListener("keydown", (e) => {
+    if (!isOpen() || e.key !== "Tab") return;
 
-Message :
-${fd.get("msg")}
+    const focusables = drawer.querySelectorAll("button, a, input, textarea, [tabindex]:not([tabindex='-1'])");
+    if (!focusables.length) return;
 
-Zone : Perpignan / 66`;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
 
-  window.location.href = makeSmsLink(message);
-  return false;
-};
-
-// Init
-document.getElementById("year").textContent = new Date().getFullYear();
-setPhoneEverywhere();
-setupWhatsapp();
-setupSmsButtons();
-setupDrawer();
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+})();
