@@ -104,7 +104,7 @@
   // Close drawer when clicking a link
   $$("#drawer a").forEach((a) => a.addEventListener("click", () => setDrawer(false)));
 
-  // Focus trap (simple)
+  // Focus trap
   document.addEventListener("keydown", (e) => {
     if (!isOpen() || e.key !== "Tab") return;
     const focusables = drawer.querySelectorAll("button, a");
